@@ -34,6 +34,11 @@ public class DragAndDropScript
 		@Test
 		public void test()
 		{
+			
+			System.out.println(driver.findElement(By.tagName("iframes")).getSize());
+			System.out.println("iam in");
+			WebElement frameElement=driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
+			driver.switchTo().frame(frameElement);
 		    WebElement src=driver.findElement(By.xpath("//div[@id='draggable']"));
 		    WebElement trgt=driver.findElement(By.xpath("//div[@id='droppable']"));
 		    

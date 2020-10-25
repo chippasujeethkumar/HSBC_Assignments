@@ -22,8 +22,7 @@ public class GoogleSearchpage
 	    System.out.println(driver.manage().window().getSize());
 	    
 	    driver.close();
-	    
-	    
+	   	    
 }
 
 }

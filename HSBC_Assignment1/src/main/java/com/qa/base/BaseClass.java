@@ -17,22 +17,15 @@ public class BaseClass
 	public static Properties prop;
 	
 	public BaseClass() 
-	{
-		
+	{		
 		prop=new Properties();
 		FileInputStream ip = null;
 		try {
 			ip = new FileInputStream("D:\\eclipse-java-photon-R-win32-x86_64\\Workspace\\HSBC_Assignment1\\src\\main\\java\\com\\qa\\config\\config.properties");
-		} catch (FileNotFoundException e) {	
-			e.printStackTrace();
-		}
-		try {
 			prop.load(ip);
-		} catch (IOException e) {
+		} catch (IOException e) {	
 			e.printStackTrace();
-		}
-		
-		
+		}		
 	}
 	public static void initalization() 
 	{
@@ -44,22 +37,18 @@ public class BaseClass
 	if(browserName.equals("chrome"))
 	{
 		System.setProperty("webdriver.chrome.driver","D:\\eclipse-java-photon-R-win32-x86_64\\Workspace\\HSBC_Assignment1\\Browserjarfiles\\chromedriver.exe");
-		driver=new ChromeDriver();
-	
+		driver=new ChromeDriver();	
 	}
 	if(browserName.equals("FF"))
 	{
 		
 		System.setProperty("webdriver.gecko.driver","D:\\eclipse-java-photon-R-win32-x86_64\\Workspace\\HSBC_Assignment1\\Browserjarfiles\\geckodriver.exe");
 		driver=new FirefoxDriver();
-	
 	}
 	driver.manage().window().maximize();
 	driver.manage().deleteAllCookies();
 	driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
-	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-	
-	
+	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);	
 	
 	driver.get(site);
 }

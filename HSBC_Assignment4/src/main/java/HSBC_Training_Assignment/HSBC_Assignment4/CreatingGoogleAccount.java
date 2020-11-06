@@ -85,14 +85,7 @@ public class CreatingGoogleAccount {
 	    Select drpdn2=new Select(gender);
 	    drpdn2.selectByValue("2");
 	    WebElement Next=driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]"));
-	    //recovery.sendKeys("sujeethkumarrrr@gmail.com");
-	    
-	    Next.click();
-	    
-	    
-	    
-	    
-	    
+	    //recovery.sendKeys("sujeethkumarrrr@gmail.com"); 
+	    Next.click();   
 	}
-
 }

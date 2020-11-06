@@ -9,10 +9,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+import junit.framework.Assert;
 
 public class VerifyingPincode {
 
-	public static void main(String[] args)
+	@Test
+	public void function()
 	{
 		int count1=0,count2=0;
 		WebDriver driver;
@@ -25,7 +29,17 @@ public class VerifyingPincode {
 	    
 	    
 	    List<WebElement> elements=driver.findElements(By.xpath("/html/body/table/tbody/tr[3]/td[2]/table[1]/tbody/tr/td[3]"));
+	    String  pincode1=driver.findElement(By.xpath("/html/body/table/tbody/tr[3]/td[2]/table[1]/tbody/tr[4]/td[2]")).getText();
+	    String Area1=driver.findElement(By.xpath("/html/body/table/tbody/tr[3]/td[2]/table[1]/tbody/tr[48]/td[3]")).getText();
+	    String Area2=driver.findElement(By.xpath("/html/body/table/tbody/tr[3]/td[2]/table[1]/tbody/tr[48]/td[3]")).getText();
+	    String pincode2=driver.findElement(By.xpath("/html/body/table/tbody/tr[3]/td[2]/table[1]/tbody/tr[4]/td[2]")).getText();
+	    System.out.println("Dublicate Areas and Pincodes");
+	    System.out.println("Area1 "+Area1+" & Pincode1"+pincode1);
+	    System.out.println("Area1 "+Area2+" & Pincode2"+pincode2);
 	    
+	    
+	    Assert.assertEquals(pincode1,pincode2);
+	 
 	    
 	    ArrayList<String> pincodes=new ArrayList<String>();
 	    System.out.println("size is:"+elements.size());
@@ -50,5 +64,6 @@ public class VerifyingPincode {
 	    }
 	    //299,113
 	    System.out.println("Above are dublicate pincodes and count of those pincodes are:"+count1);	
+	    driver.close();
 	}
 }

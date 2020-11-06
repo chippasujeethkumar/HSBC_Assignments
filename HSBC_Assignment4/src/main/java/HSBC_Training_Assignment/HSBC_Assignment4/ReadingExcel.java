@@ -12,10 +12,13 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class ReadingExcel {
 
-	public static void main(String[] args) throws IOException
+	@Test
+	public  void function() throws IOException
 	{	    
 	    File source=new File("D:\\Learnings\\DATA1.xls");
 	   
@@ -30,6 +33,9 @@ public class ReadingExcel {
 		
 		System.out.println("EXCEL CELL VALUE FOR 0 ROW AND 0 COLOUMN "+cell1);
 		System.out.println("EXCEL CELL VALUE FOR 0 ROW AND 1 COLOUMN "+cell2);
+		
+		Assert.assertEquals(cell1, "SOFTWARE");
+		Assert.assertEquals(cell2, 123455.0);
 		
 	}    
 
